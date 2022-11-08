@@ -7,9 +7,11 @@ with open('string.yaml','r') as read_file:
 inputStr = contents
 result = ''
 
-for i in range(len(inputStr)-1,-1,-1):
-    result = result + inputStr[i]
-
+inputStr = contents.split()[::-1]
+l = []
+for i in inputStr:
+    l.append(i)
+result = (" ".join(l))
 with open('output.yaml','w') as dump_file:
     yaml.dump(result, dump_file)
 print(result)
